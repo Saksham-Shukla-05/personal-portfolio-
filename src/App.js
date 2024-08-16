@@ -139,7 +139,7 @@ function HeroSection({ isDark }) {
   return (
     <div
       style={{ backgroundImage: `url(${commonBg})` }}
-      className="h-screen relative  bg-cover bg-center  border-black w-full"
+      className="h-96 md:h-screen relative  bg-cover bg-center  border-black w-full"
     >
       <div className="absolute  pointer-events-none h-full w-full inset-0 z-0 bg-gray-300 bg-opacity-0 "></div>
 
@@ -156,12 +156,12 @@ function HeroSection({ isDark }) {
           }
         >
           <div className="p-2">
-            <p className="text-center text-3xl md:text-4xl lg:text-5xl font-bold">
+            <p className="text-center text-2xl md:text-4xl lg:text-5xl font-bold">
               Hey, I'm Saksham Shukla
             </p>
           </div>
           <div className="p-2 w-full lg:w-[80%] text-center">
-            <p className="text-[15px] md:leading-10 md:text-[18px] font-semibold">
+            <p className="text-[13px] leading-6 md:leading-10 md:text-[18px] font-semibold">
               A Result-Oriented Web Developer building and managing Websites and
               Web Applications that leads to the success of the overall product
             </p>
@@ -200,11 +200,11 @@ function HeroSection({ isDark }) {
             </div>
           </div>
 
-          <div className="h-12 w-7 absolute bottom-0 rounded-xl border-solid border-2 border-black">
+          {/* <div className="h-12 w-7 absolute bottom-0 rounded-xl border-solid border-2 border-black">
             <div className="relative animation-dotMove ">
               <span className="text-4xl absolute top-0 left-1.5 ">.</span>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
@@ -231,17 +231,17 @@ function AboutMe({ isDark }) {
 
       <div className="mt-5 gap-4 md:gap-3 w-full  flex flex-col lg:flex-row justify-between">
         <div className="p-3 md:p-6 flex flex-col gap-7 flex-1">
-          <div className="p-2 md:p-5 font-bold text-[18px] md:text-xl">
+          <div className="p-2 md:p-5 font-bold text-[19px] md:text-xl">
             Get to know me!
           </div>
           <div className="px-2 md:px-5 w-full lg:max-w-lg  flex-col flex gap-4 text-[15px]  ">
-            <p className="text-[14px] font-medium md:font-normal md:text-[15px] leading-7 md:leading-8">
+            <p className="text-[15px] font-medium md:font-normal md:text-[15px] leading-7 md:leading-8">
               I'm a Frontend Focused Web Developer building and managing the
               Front-end of Websites and Web Applications that leads to the
               success of the overall product. Check out some of my work in the
               Projects section.
             </p>
-            <p className="text-[14px] md:text-[15px] leading-7">
+            <p className="text-[15px] md:text-[15px] leading-7">
               I also like sharing content related to the stuff that I have
               learned over the years in Web Development so it can help other
               people of the Dev Community. Feel free to Connect or Follow me on
@@ -249,7 +249,7 @@ function AboutMe({ isDark }) {
               Web Development and Programming
             </p>
 
-            <p className="text-[14px] md:text-[15px] leading-7">
+            <p className="text-[15px] md:text-[15px] leading-7">
               I'm open to Job opportunities where I can contribute, learn and
               grow. If you have a good opportunity that matches my skills and
               experience then don't hesitate to contact me.
@@ -263,7 +263,7 @@ function AboutMe({ isDark }) {
         </div>
 
         <div className="p-4  flex flex-col flex-1">
-          <div className="p-2 md:p-5 px-2 font-bold text-[18px] md:text-xl">
+          <div className="p-2 md:p-5 px-2 font-bold text-[19px] md:text-xl">
             My Skils
           </div>
           <div className="py-10 w-full md:w-[75%] flex gap-6 md:gap-8 flex-wrap">
