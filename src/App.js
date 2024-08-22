@@ -178,7 +178,7 @@ function HeroSection({ isDark }) {
             </p>
           </div>
           <div className="hover:-translate-y-3 transition-transform duration-500 ease-in-out p-2 w-56 opacity-100">
-            <a className="border" href="#Project">
+            <a className="" href="#Project">
               <button className="font-semibold w-full p-3 rounded text-sm md:text-xl text-white  bg-purple-600">
                 PROJECTS
               </button>
@@ -386,7 +386,11 @@ function Project({ isDark }) {
         </p>
       </div>
 
-      <ProjectSubSec Image={Netflix} heading={"Netflix UI Clone"}>
+      <ProjectSubSec
+        Image={Netflix}
+        heading={"Netflix UI Clone"}
+        linkToCs={"https://netflix-landing-page-lovat-eight.vercel.app/"}
+      >
         A static UI clone of the Netflix platform created using Vanilla
         JavaScript, CSS, and HTML. This project highlights my ability to
         replicate complex user interfaces, with attention to detail in layout,
@@ -423,9 +427,11 @@ function ProjectSubSec({ Image, heading, children, linkToCs = "#" }) {
             {children}
           </div>
           <div className="md:ml-5 ml-0 mt-3 hover:-translate-y-3 transition-transform duration-500 ease-in-out w-40 opacity-100">
-            <button className="uppercase font-medium w-full p-2 rounded text-sm md:text-[17px] text-white  bg-purple-600">
-              <a href={linkToCs}>Case Study</a>
-            </button>
+            <a href={linkToCs} target="_blank">
+              <button className="uppercase font-medium w-full p-2 rounded text-sm md:text-[17px] text-white  bg-purple-600">
+                Case Study
+              </button>
+            </a>
           </div>
         </div>
       </div>
@@ -471,8 +477,8 @@ function ContactUs({ isDark }) {
           <div
             className={`${
               isDark
-                ? "mb-5 rounded text-white bg-black flex items-center min-w-[60%] h-full"
-                : "mb-5 rounded text-black bg-white flex items-center min-w-[60%] h-full"
+                ? "mb-5 rounded text-white bg-black flex items-center   w-[90%] md:w-[60%] lg:w-[50%]  h-full"
+                : "mb-5 rounded text-black bg-white flex items-center   w-[90%] md:w-[60%] lg:w-[50%]  h-full"
             }`}
           >
             <div className="p-3 flex flex-col gap-6 items-center  w-full ">
@@ -554,10 +560,10 @@ function Footer({ isDark }) {
     >
       <div className=" w-full h-full gap-7 lg:gap-0  flex flex-col lg:flex-row ">
         <div className=" flex-1 flex flex-col gap-5">
-          <div className="md:text-xl text-[15px]  uppercase">
+          <div className="md:text-xl text-[16px]  uppercase">
             Saksham Shukla
           </div>
-          <div className="md:text-[15px] text-[14px] ">
+          <div className="md:text-[15px] text-[15px] ">
             A Frontend focused Web Developer building the Frontend of Websites
             and Web Applications that leads to the success of the overall
             product
@@ -566,7 +572,7 @@ function Footer({ isDark }) {
 
         <div className="flex-1 flex flex-col  gap-3">
           <div className=" w-full flex gap-5 flex-col h-full  lg:items-end items-start">
-            <div className="md:text-xl text-[15px]  mr-0 lg:mr-9 pr-12 flex  uppercase ">
+            <div className="md:text-xl text-[16px]  mr-0 lg:mr-9 pr-12 flex  uppercase ">
               Social
             </div>
             <div className=" flex gap-9">
