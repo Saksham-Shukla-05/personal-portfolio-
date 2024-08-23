@@ -19,8 +19,8 @@ function App() {
       <div
         className={
           isDark
-            ? `flex flex-col gap-0 md:gap-5 bg-black`
-            : `flex flex-col gap-0 md:gap-5 bg-white`
+            ? `flex flex-col gap-2  bg-black`
+            : `flex flex-col gap-2  bg-white`
         }
       >
         <NavBar isDark={isDark} handleIsDark={handleIsDark} />
@@ -52,6 +52,9 @@ function NavBar({ isDark, handleIsDark }) {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+  function CloseMenuOnLiClicks() {
+    setOpenMenu(!openMenu);
+  }
   return (
     <>
       <nav
@@ -121,25 +124,48 @@ function NavBar({ isDark, handleIsDark }) {
             isDark ? "bg-black text-white text-right" : "bg-white text-right"
           }
         >
-          <li className="flex justify-end border-t-2 border-b-2 py-5 px-4 cursor-pointer transition-colors duration-300 font-medium hover:text-purple-600 text-sm md:text-[14px]">
+          <li
+            onClick={() => CloseMenuOnLiClicks()}
+            className="flex justify-end border-t-2 border-b-2 py-5 px-4 cursor-pointer transition-colors duration-300 font-medium hover:text-purple-600 text-sm md:text-[14px]"
+          >
             {!isDark ? (
               <IoMoon onClick={() => handleIsDark()} size={18} />
             ) : (
               <IoMdSunny onClick={() => handleIsDark()} size={18} />
             )}
           </li>
-          <li className="border-b-2 py-5 px-4 cursor-pointer transition-colors duration-300 font-medium hover:text-purple-600 text-sm md:text-[14px]">
-            HOME
-          </li>
-          <li className="border-b-2 py-5 px-4 cursor-pointer transition-colors duration-300 font-medium hover:text-purple-600 text-sm md:text-[14px]">
-            ABOUT
-          </li>
-          <li className="border-b-2 py-5 px-4 cursor-pointer transition-colors duration-300 font-medium hover:text-purple-600 text-sm md:text-[14px]">
-            PROJECT
-          </li>
-          <li className="border-b-2 py-5 px-4 cursor-pointer transition-colors duration-300 font-medium hover:text-purple-600 text-sm md:text-[14px]">
-            CONTACT
-          </li>
+          <a href="#">
+            <li
+              onClick={() => CloseMenuOnLiClicks()}
+              className="border-b-2 py-5 px-4 cursor-pointer transition-colors duration-300 font-medium hover:text-purple-600 text-sm md:text-[14px]"
+            >
+              HOME
+            </li>
+          </a>
+          <a href="#About">
+            <li
+              onClick={() => CloseMenuOnLiClicks()}
+              className="border-b-2 py-5 px-4 cursor-pointer transition-colors duration-300 font-medium hover:text-purple-600 text-sm md:text-[14px]"
+            >
+              ABOUT
+            </li>
+          </a>
+          <a href="#Project">
+            <li
+              onClick={() => CloseMenuOnLiClicks()}
+              className="border-b-2 py-5 px-4 cursor-pointer transition-colors duration-300 font-medium hover:text-purple-600 text-sm md:text-[14px]"
+            >
+              PROJECT
+            </li>
+          </a>
+          <a href="#Contact">
+            <li
+              onClick={() => CloseMenuOnLiClicks()}
+              className="border-b-2 py-5 px-4 cursor-pointer transition-colors duration-300 font-medium hover:text-purple-600 text-sm md:text-[14px]"
+            >
+              CONTACT
+            </li>
+          </a>
         </ul>
       </div>
     </>
@@ -150,15 +176,15 @@ function HeroSection({ isDark }) {
   return (
     <div
       style={{ backgroundImage: `url(${commonBg})` }}
-      className="h-[30rem] md:h-screen relative  bg-cover bg-center  border-black w-full"
+      className="h-[30rem] md:h-full relative  bg-cover bg-center  border-black w-full"
     >
       <div className="absolute  pointer-events-none h-full w-full inset-0 z-0 bg-gray-300 bg-opacity-0 "></div>
 
       <div
         className={
           isDark
-            ? "tracking-widest  flex flex-col justify-center items-center  h-[100%] w-full text-white bg-black bg-opacity-90"
-            : "tracking-widest  flex flex-col justify-center items-center  h-[100%] w-full bg-gray-200 bg-opacity-80"
+            ? "tracking-widest  flex flex-col justify-center items-center p-0 md:p-12 h-[100%] w-full text-white bg-black bg-opacity-90"
+            : "tracking-widest  flex flex-col justify-center items-center p-0 md:p-12 h-[100%] w-full bg-gray-200 bg-opacity-80"
         }
       >
         <div
@@ -193,22 +219,34 @@ function HeroSection({ isDark }) {
               }
             >
               <div className="w-full flex justify-center  hover:-translate-y-2 transition-transform transition-delay-500 ease-in-out cursor-pointer">
-                <FaGithub
-                  size={30}
-                  className="hover:text-purple-600 transition-colors trasition-delay-300"
-                />
+                <a href="https://github.com/Saksham-Shukla-05" target="_blank">
+                  <FaGithub
+                    size={30}
+                    className="hover:text-purple-600 transition-colors trasition-delay-300"
+                  />
+                </a>
               </div>
               <div className="w-full flex justify-center hover:-translate-y-2 transition-transform transition-delay-300 ease-in cursor-pointer">
-                <FaLinkedin
-                  size={30}
-                  className="hover:text-purple-600 transition-colors trasition-delay-300"
-                />
+                <a
+                  href="https://www.linkedin.com/in/saksham-shukla-9758602a6/"
+                  target="_blank"
+                >
+                  <FaLinkedin
+                    size={30}
+                    className="hover:text-purple-600 transition-colors trasition-delay-300"
+                  />
+                </a>
               </div>
               <div className="w-full flex justify-center hover:-translate-y-2 transition-transform transition-delay-300 ease-in cursor-pointer">
-                <FaInstagram
-                  size={30}
-                  className="hover:text-purple-600 transition-colors trasition-delay-300"
-                />
+                <a
+                  href="https://www.instagram.com/saksham_shukla_03/"
+                  target="_blank"
+                >
+                  <FaInstagram
+                    size={30}
+                    className="hover:text-purple-600 transition-colors trasition-delay-300"
+                  />
+                </a>
               </div>
             </div>
           </div>
@@ -558,7 +596,7 @@ function Footer({ isDark }) {
         "bg-black md:py-12 py-12 p-3 md:p-6 text-white  flex flex-col gap-12  w-full h-full border-2 border-black border-solid"
       }
     >
-      <div className=" w-full h-full gap-7 lg:gap-0  flex flex-col lg:flex-row ">
+      <div className="mt-3 md:mt-12 w-full h-full gap-7 lg:gap-0  flex flex-col lg:flex-row ">
         <div className=" flex-1 flex flex-col gap-5">
           <div className="md:text-xl text-[16px]  uppercase">
             Saksham Shukla
@@ -576,9 +614,36 @@ function Footer({ isDark }) {
               Social
             </div>
             <div className=" flex gap-9">
-              <FaGithub size={30} cursor={"pointer"} />{" "}
-              <FaLinkedin size={30} cursor={"pointer"} />{" "}
-              <FaInstagram size={30} cursor={"pointer"} />
+              <a
+                href="https://github.com/Saksham-Shukla-05"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaGithub
+                  size={30}
+                  className="hover:text-purple-600 transition-colors trasition-delay-300"
+                />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/saksham-shukla-9758602a6/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaLinkedin
+                  size={30}
+                  className="hover:text-purple-600 transition-colors trasition-delay-300"
+                />
+              </a>
+              <a
+                href="https://www.instagram.com/saksham_shukla_03/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaInstagram
+                  size={30}
+                  className="hover:text-purple-600 transition-colors trasition-delay-300"
+                />
+              </a>
             </div>
           </div>
         </div>
@@ -586,8 +651,14 @@ function Footer({ isDark }) {
 
       <div className="border-t-[1px] w-full flex flex-col items-center">
         <div className=" border-white border-solid  ">
-          <p className="text-[11px] mt-4 -mb-5">
-            © Copyright 2024 . Made by Saksham Shukla
+          <p className="mt-5 md:mt-16 text-[11px] -mb-5">
+            © Copyright 2024 . Made by{" "}
+            <a
+              href="https://www.linkedin.com/in/saksham-shukla-9758602a6/"
+              className="underline"
+            >
+              Saksham Shukla
+            </a>
           </p>
         </div>
       </div>
