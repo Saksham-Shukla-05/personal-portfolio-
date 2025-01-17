@@ -126,7 +126,7 @@ function NavBar({ isDark, handleIsDark }) {
         >
           <li
             onClick={() => CloseMenuOnLiClicks()}
-            className="flex justify-end border-t-2 border-b-2 py-5 px-4 cursor-pointer transition-colors duration-300 font-medium hover:text-purple-600 text-sm md:text-[14px]"
+            className="flex justify-end border-t-[1px]  py-5 px-2 cursor-pointer transition-colors duration-300 font-medium hover:text-purple-600 text-sm md:text-[14px]"
           >
             {!isDark ? (
               <IoMoon onClick={() => handleIsDark()} size={18} />
@@ -137,7 +137,7 @@ function NavBar({ isDark, handleIsDark }) {
           <a href="#">
             <li
               onClick={() => CloseMenuOnLiClicks()}
-              className="border-b-2 py-5 px-4 cursor-pointer transition-colors duration-300 font-medium hover:text-purple-600 text-sm md:text-[14px]"
+              className="border-t-[1px] py-5 px-2 cursor-pointer transition-colors duration-300 font-medium hover:text-purple-600 text-sm md:text-[14px]"
             >
               HOME
             </li>
@@ -145,7 +145,7 @@ function NavBar({ isDark, handleIsDark }) {
           <a href="#About">
             <li
               onClick={() => CloseMenuOnLiClicks()}
-              className="border-b-2 py-5 px-4 cursor-pointer transition-colors duration-300 font-medium hover:text-purple-600 text-sm md:text-[14px]"
+              className="border-t-[1px] py-5 px-2 cursor-pointer transition-colors duration-300 font-medium hover:text-purple-600 text-sm md:text-[14px]"
             >
               ABOUT
             </li>
@@ -153,7 +153,7 @@ function NavBar({ isDark, handleIsDark }) {
           <a href="#Project">
             <li
               onClick={() => CloseMenuOnLiClicks()}
-              className="border-b-2 py-5 px-4 cursor-pointer transition-colors duration-300 font-medium hover:text-purple-600 text-sm md:text-[14px]"
+              className="border-t-[1px] py-5 px-2 cursor-pointer transition-colors duration-300 font-medium hover:text-purple-600 text-sm md:text-[14px]"
             >
               PROJECT
             </li>
@@ -161,7 +161,7 @@ function NavBar({ isDark, handleIsDark }) {
           <a href="#Contact">
             <li
               onClick={() => CloseMenuOnLiClicks()}
-              className="border-b-2 py-5 px-4 cursor-pointer transition-colors duration-300 font-medium hover:text-purple-600 text-sm md:text-[14px]"
+              className="border-t-[1px] py-5 px-2 cursor-pointer transition-colors duration-300 font-medium hover:text-purple-600 text-sm md:text-[14px]"
             >
               CONTACT
             </li>
@@ -434,7 +434,11 @@ function Project({ isDark }) {
         replicate complex user interfaces, with attention to detail in layout,
         styling, and responsiveness.
       </ProjectSubSec>
-      <ProjectSubSec Image={TacoBell} heading={"TacoBell UI Clone"}>
+      <ProjectSubSec
+        Image={TacoBell}
+        heading={"TacoBell UI Clone"}
+        linkToCs="https://tacobell-frontend-clone.vercel.app/"
+      >
         A static UI clone of the Taco Bell website built with React and Tailwind
         CSS. It highlights my ability to replicate brand interfaces with precise
         layouts and responsive design, closely mirroring Taco Bell's modern
@@ -490,20 +494,18 @@ function ContactUs({ isDark }) {
     <div
       id="Contact"
       style={{ backgroundImage: `url(${commonBg})` }}
-      className="mt-16 md:mt-20 h-full md:h-fit relative  bg-cover bg-center w-full"
+      className="mt-16 md:mt-20 h-full md:h-fit relative bg-cover bg-center w-full"
     >
-      <div className="absolute  pointer-events-none h-full w-full inset-0 z-0 bg-gray-300 bg-opacity-0 "></div>
+      <div className="absolute pointer-events-none h-full w-full inset-0 z-0 bg-gray-300 bg-opacity-0"></div>
 
       <div
         className={
           isDark
-            ? "tracking-widest  flex flex-col gap-9  h-full w-full text-white bg-black bg-opacity-90"
-            : "tracking-widest  flex flex-col gap-9  h-full w-full bg-gray-200 bg-opacity-80"
+            ? "tracking-widest flex flex-col gap-9 h-full w-full text-white bg-black bg-opacity-90"
+            : "tracking-widest flex flex-col gap-9 h-full w-full bg-gray-200 bg-opacity-80"
         }
       >
-        <div
-          className={"mt-5  h-full w-full flex flex-col items-center gap-10"}
-        >
+        <div className="mt-5 h-full w-full flex flex-col items-center gap-10">
           <div className="flex flex-col gap-5 items-center">
             <p className="text-2xl md:text-3xl uppercase font-bold">Contact</p>
             <div className="border-solid border-2 rounded-2xl border-purple-700 w-10"></div>
@@ -515,12 +517,15 @@ function ContactUs({ isDark }) {
           <div
             className={`${
               isDark
-                ? "mb-5 rounded text-white bg-black flex items-center   w-[90%] md:w-[60%] lg:w-[50%]  h-full"
-                : "mb-5 rounded text-black bg-white flex items-center   w-[90%] md:w-[60%] lg:w-[50%]  h-full"
+                ? "mb-5 rounded text-white bg-black flex items-center w-[90%] md:w-[60%] lg:w-[50%] h-full"
+                : "mb-5 rounded text-black bg-white flex items-center w-[90%] md:w-[60%] lg:w-[50%] h-full"
             }`}
           >
-            <div className="p-3 flex flex-col gap-6 items-center  w-full ">
-              <div className="p-3 gap-3 flex flex-col items-start w-full ">
+            <form
+              className="p-3 flex flex-col gap-6 items-center w-full"
+              onSubmit={(e) => e.preventDefault()}
+            >
+              <div className="p-3 gap-3 flex flex-col items-start w-full">
                 <label
                   className="px-2 text-[14px] md:text-[16px]"
                   htmlFor="name"
@@ -531,15 +536,15 @@ function ContactUs({ isDark }) {
                   placeholder="Enter Your Name"
                   className={`${
                     isDark
-                      ? "placeholder:text-[12px] md:placeholder:text-[15px] text-[13px] md:text-[15px] outline-none border-none  text-black bg-gray-200 p-3 rounded min-w-[100%]"
+                      ? "placeholder:text-[12px] md:placeholder:text-[15px] text-[13px] md:text-[15px] outline-none border-none text-black bg-gray-200 p-3 rounded min-w-[100%]"
                       : "placeholder:text-[12px] md:placeholder:text-[15px] text-[13px] md:text-[15px] outline-none border-none bg-gray-200 p-3 rounded min-w-[100%]"
                   }`}
                   type="text"
-                  name=""
                   id="name"
+                  required
                 />
               </div>
-              <div className="p-3 gap-3 flex flex-col items-start w-full ">
+              <div className="p-3 gap-3 flex flex-col items-start w-full">
                 <label
                   className="px-2 text-[14px] md:text-[16px]"
                   htmlFor="email"
@@ -550,15 +555,15 @@ function ContactUs({ isDark }) {
                   placeholder="Enter Your Email"
                   className={`${
                     isDark
-                      ? "placeholder:text-[12px] md:placeholder:text-[15px] text-[13px] md:text-[15px] outline-none border-none  text-black bg-gray-200 p-3 rounded min-w-[100%]"
+                      ? "placeholder:text-[12px] md:placeholder:text-[15px] text-[13px] md:text-[15px] outline-none border-none text-black bg-gray-200 p-3 rounded min-w-[100%]"
                       : "placeholder:text-[12px] md:placeholder:text-[15px] text-[13px] md:text-[15px] outline-none border-none bg-gray-200 p-3 rounded min-w-[100%]"
                   }`}
                   type="email"
-                  name=""
                   id="email"
+                  required
                 />
               </div>
-              <div className="p-3 gap-3 flex flex-col items-start w-full ">
+              <div className="p-3 gap-3 flex flex-col items-start w-full">
                 <label
                   className="px-2 text-[14px] md:text-[16px]"
                   htmlFor="message"
@@ -569,19 +574,21 @@ function ContactUs({ isDark }) {
                   placeholder="Enter Your Message"
                   className={`${
                     isDark
-                      ? "resize-none placeholder:text-[12px] md:placeholder:text-[15px] text-[13px] md:text-[15px] outline-none border-none h-40  text-black bg-gray-200 p-3 rounded min-w-[100%]"
+                      ? "resize-none placeholder:text-[12px] md:placeholder:text-[15px] text-[13px] md:text-[15px] outline-none border-none h-40 text-black bg-gray-200 p-3 rounded min-w-[100%]"
                       : "resize-none placeholder:text-[12px] md:placeholder:text-[15px] text-[13px] md:text-[15px] outline-none border-none h-40 bg-gray-200 p-3 rounded min-w-[100%]"
                   }`}
-                  name=""
                   id="message"
+                  required
                 ></textarea>
               </div>
-              <div className=" flex flex-col items-stretch md:items-end w-full">
-                <button className="rounded py-3 px-12  text-sm md:text-lg text-white  bg-purple-600">
-                  Submit
-                </button>
+              <div className="flex flex-col items-stretch md:items-end w-full">
+                <input
+                  className="rounded py-3 px-12 text-sm md:text-lg text-white bg-purple-600 cursor-pointer"
+                  type="submit"
+                  value="Submit"
+                />
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
@@ -652,7 +659,7 @@ function Footer({ isDark }) {
       <div className="border-t-[1px] w-full flex flex-col items-center">
         <div className=" border-white border-solid  ">
           <p className="mt-5 md:mt-16 text-[11px] -mb-5">
-            © Copyright 2024 . Made by{" "}
+            © Copyright 2025 . Made by{" "}
             <a
               href="https://www.linkedin.com/in/saksham-shukla-9758602a6/"
               className="underline"
