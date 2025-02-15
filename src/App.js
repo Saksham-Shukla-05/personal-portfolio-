@@ -3,6 +3,7 @@ import { IoMoon } from "react-icons/io5";
 import profileImg from "./Images/profile-img.jpg";
 import Netflix from "./Images/Netflix.jpg";
 import TacoBell from "./Images/TacoBell.jpg";
+import ECommerce from "./Images/E-Commerce (1).jpeg";
 import commonBg from "./svgs/common-bg.svg";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { useEffect, useState } from "react";
@@ -423,6 +424,17 @@ function Project({ isDark }) {
           created with each project containing its own case study
         </p>
       </div>
+
+      <ProjectSubSec
+        Image={ECommerce}
+        heading={"E-Commerce"}
+        linkToCs={"https://e-commerce-frontend-drei.onrender.com/"}
+      >
+        A full-stack E-Commerce web application built using the MERN stack. It
+        features a responsive frontend with React, a secure backend with Node.js
+        and Express, and MongoDB for database management. The application also
+        integrates Razorpay as the payment gateway for seamless transactions.
+      </ProjectSubSec>
 
       <ProjectSubSec
         Image={Netflix}
