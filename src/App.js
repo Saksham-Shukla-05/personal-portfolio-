@@ -9,7 +9,7 @@ import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { IoMdSunny } from "react-icons/io";
 import { RxCross2 } from "react-icons/rx";
-
+import NextJsMusicApp from "./Images/NextJsMusicApp.png";
 function App() {
   const [isDark, setIsDark] = useState(false);
   function handleIsDark() {
@@ -425,6 +425,18 @@ function Project({ isDark }) {
         </p>
       </div>
 
+      <ProjectSubSec
+        Image={NextJsMusicApp}
+        heading={"Next-js Music App"}
+        linkToCs={"https://next-js-music-app-lac.vercel.app//"}
+      >
+        A modern frontend music application built using Next.js and Tailwind
+        CSS. This project demonstrates my ability to create responsive, visually
+        engaging UIs using the Next.js framework. It features dynamic layouts,
+        smooth animations, and component-based architecture, showcasing my
+        frontend development skills and understanding of modern web
+        technologies.
+      </ProjectSubSec>
       <ProjectSubSec
         Image={ECommerce}
         heading={"E-Commerce"}
