@@ -3,7 +3,7 @@ import { IoMoon } from "react-icons/io5";
 import profileImg from "./Images/profile-img.jpg";
 import Netflix from "./Images/Netflix.jpg";
 import TacoBell from "./Images/TacoBell.jpg";
-import ECommerce from "./Images/E-Commerce (1).jpeg";
+import e_com from "./Images/e-com.png";
 import commonBg from "./svgs/common-bg.svg";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { useEffect, useState } from "react";
@@ -438,7 +438,7 @@ function Project({ isDark }) {
         technologies.
       </ProjectSubSec>
       <ProjectSubSec
-        Image={ECommerce}
+        Image={e_com}
         heading={"E-Commerce"}
         linkToCs={"https://e-commerce-frontend-drei.onrender.com/"}
       >
